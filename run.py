@@ -50,15 +50,23 @@ user_name = ''
 walk_of_fame = SHEET.worksheet("walk_of_fame")
 
 
-def validate_selected_option(option):
+def exit():
     """
-    Validate that a valid option has been selected
-    Raise ValueError if invalid option selected
+    Provide option to exit current screen
+    Return to menu
     """
-    if option != "1" and option != "2" and option != "3":
-        raise ValueError("Sorry not an option, please enter 1, 2 or 3")
 
-    return True
+    while True:
+        try:
+            exit = input("Type m to display main menu \n")
+
+            if exit.lower() == "m":
+                os.system("clear")
+                menu()
+                break
+        except ValueError as e:
+            print("Try again:", str(e))
+            print()
 
 
 def how_to_play():
@@ -86,6 +94,17 @@ def how_to_play():
     print(f'{user_name},')
     print(instructions)
     exit()
+
+
+def validate_selected_option(option):
+    """
+    Validate that a valid option has been selected
+    Raise ValueError if invalid option selected
+    """
+    if option != "1" and option != "2" and option != "3":
+        raise ValueError("Sorry not an option, please enter 1, 2 or 3")
+
+    return True
 
 
 def menu():
