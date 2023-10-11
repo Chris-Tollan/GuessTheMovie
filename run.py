@@ -46,6 +46,7 @@ movies = [
 """
 GLOBALS
 """
+count = 0
 user_name = ''
 walk_of_fame = SHEET.worksheet("walk_of_fame")
 
@@ -80,6 +81,26 @@ def exit():
             print()
 
 
+def leaderboard():
+    """
+    Display top scorers from leaderboard google sheet
+    """
+    os.system('clear')
+
+    print(f.renderText("Walk of Fame"))
+    print('')
+    print('Top 10 Scores')
+    print('')
+    leaderboard = walk_of_fame.get_all_values()
+
+    for rank, item in enumerate(leaderboard[:10], start=1):
+        username, count = item
+        print(f"Rank {rank}: {username} - {count}")
+
+    print()
+    exit()
+
+
 def how_to_play():
     """
     Explain the game to user then start game
@@ -92,14 +113,15 @@ def how_to_play():
     which have been scrambled to make them unreadable.
     In order to progress through the game you must enter the unscrambled
     movie title.
-    When typing your answer make sure to only use lowercase letters.
-    At the end you will be shown your score...but will it make our
-    Walk of Fame...?
-    To begin, select the Start Game option from the menu. 
 
     Example
     Movie - YOCKR
     Unscrambled Movie - ROCKY
+
+    When typing your answer make sure to only use lowercase letters.
+    At the end you will be shown your score...but will it make our
+    Walk of Fame...?
+    To begin, select the Start Game option from the menu. 
     """
     print(f.renderText("How To Play"))
     print(f'{user_name},')
