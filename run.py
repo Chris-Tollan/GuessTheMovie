@@ -50,6 +50,45 @@ user_name = ''
 walk_of_fame = SHEET.worksheet("walk_of_fame")
 
 
+def menu():
+    """
+        Display options to
+    -	Explain how to play
+    -	Access leaderboard
+    -	Start game
+    """
+
+    while True:
+        try:
+            print(f.renderText("Menu"))
+            print('')
+            print("Lights...")
+            print("Camera...")
+            print("Action!")
+            print("")
+            print(f'Hey {user_name}, choose an option from the following')
+            print('')
+            print("[1] How to Play")
+            print("[2] Leaderboard")
+            print("[3] Start Game")
+            print("")
+            option = input("Enter 1, 2 or 3 \n")
+
+            if option == "1":
+                how_to_play()
+                break
+            elif option == "2":
+                leaderboard()
+                break
+            else:
+                os.system("clear")
+                begin_game_play()
+                break
+        except ValueError as e:
+            print("Try again:", str(e))
+            print()
+
+
 def validate_user_name(user_name):
     """
     Check username entry for special characters
