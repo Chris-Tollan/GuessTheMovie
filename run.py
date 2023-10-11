@@ -26,3 +26,19 @@ else:
     logger.warning("Loading Google Import from environment")
 
 f = Figlet(font="slant")
+
+"""
+list of movies to be scrambled
+"""
+movies = [
+          'rocky',
+          'jaws',
+          'spotlight',
+          'rambo',
+          'tangled',
+          'casino',
+          'scream',
+          'goodfellas',
+          'thor',
+          'jobs'
+          ]
