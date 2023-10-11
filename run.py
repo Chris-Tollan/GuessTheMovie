@@ -50,6 +50,19 @@ user_name = ''
 walk_of_fame = SHEET.worksheet("walk_of_fame")
 
 
+def validate_user_name(user_name):
+    """
+    Check username entry for special characters
+    Raise ValueError if special  characters are used
+    """
+    invalid_chars = ["/", "(", ")", "{", "}", "[", "]", "<", ">"]
+
+    if any(char in user_name for char in invalid_chars):
+        raise ValueError("Username can't contain /(){}[]<>\n")
+
+    return True
+
+
 def load_game():
     """
     Figlet banner
@@ -70,6 +83,7 @@ def load_game():
     while True:
         try:
             user_name = input("Enter your username here: \n")
+            if validate_user_name(user_name):
                 print()
                 print(f"Hello {user_name} welcome to Guess the Movie! \n")
                 os.system("clear")
