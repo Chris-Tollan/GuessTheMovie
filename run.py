@@ -50,6 +50,17 @@ user_name = ''
 walk_of_fame = SHEET.worksheet("walk_of_fame")
 
 
+def validate_exit(exit):
+    """
+    Validate that user has entered m
+    Raise ValueError if any other character used
+    """
+    if exit.lower() != "m":
+        raise ValueError("Please enter m")
+
+    return True
+
+
 def exit():
     """
     Provide option to exit current screen
