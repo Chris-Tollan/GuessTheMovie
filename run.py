@@ -61,6 +61,33 @@ def validate_selected_option(option):
     return True
 
 
+def how_to_play():
+    """
+    Explain the game to user then start game
+    """
+    os.system("clear")
+
+    instructions = """
+
+    During this game you will be presented with 10 movie titles
+    which have been scrambled to make them unreadable.
+    In order to progress through the game you must enter the unscrambled
+    movie title.
+    When typing your answer make sure to only use lowercase letters.
+    At the end you will be shown your score...but will it make our
+    Walk of Fame...?
+    To begin, select the Start Game option from the menu. 
+
+    Example
+    Movie - YOCKR
+    Unscrambled Movie - ROCKY
+    """
+    print(f.renderText("How To Play"))
+    print(f'{user_name},')
+    print(instructions)
+    exit()
+
+
 def menu():
     """
         Display options to
