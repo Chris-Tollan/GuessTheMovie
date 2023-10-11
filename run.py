@@ -1,7 +1,12 @@
 import logging
+import os
+import random
 from pathlib import Path
+
 import gspread
+import requests
 from google.oauth2.service_account import Credentials
+from pyfiglet import Figlet
 
 logger = logging.getLogger(__name__)
 
@@ -19,3 +24,5 @@ if Path("creds.json").exists():
 else:
     # load all variable from environment
     logger.warning("Loading Google Import from environment")
+
+f = Figlet(font="slant")
