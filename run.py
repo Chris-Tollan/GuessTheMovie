@@ -42,3 +42,44 @@ movies = [
           'thor',
           'jobs'
           ]
+
+"""
+GLOBALS
+"""
+user_name = ''
+walk_of_fame = SHEET.worksheet("walk_of_fame")
+
+
+def load_game():
+    """
+    Figlet banner
+    Welcome message
+    Request username
+    Update global variable name
+    """
+    global user_name
+
+    print(f.renderText("Guess the Movie"))
+    print('')
+    print("Welcome to Guess the Movie")
+    print('')
+    print("How well can you recognise these scrambled blockbuster titles?")
+    print("Lets find out…")
+    print('')
+
+    while True:
+        try:
+            user_name = input("Enter your username here: \n")
+                print()
+                print(f"Hello {user_name} welcome to Guess the Movie! \n")
+                os.system("clear")
+                menu()
+                break
+        except ValueError as e:
+            print("Username is invalid:", str(e))
+
+    return user_name
+
+
+if __name__ == "__main__":
+    load_game()
