@@ -129,6 +129,65 @@ def how_to_play():
     exit()
 
 
+def begin_game_play():
+    """
+    Get movie name from list
+    Scramble movie name and display to user
+    Ask user to enter their answer
+    Check answer
+    Calculate score
+    update leaderboard
+    """
+
+    global count
+
+    print(f.renderText("Guess the Movie"))
+
+    for movie in range(len(movies)):
+        scrambled = ''.join(random.sample(movies[movie], len(movies[movie])))
+
+        print(f'Unscramble this Movie: {scrambled} ')
+        user_input = input('Enter the Movie here: \n')
+        #validate_user_input(user_input)
+
+        if user_input == movies[movie]:
+            print('That is correct, Well Done!')
+            print('')
+            count += 1
+        else:
+            print('Sorry but thats incorrect!')
+            print('')
+     
+    os.system('clear')
+    print(f.renderText("How did you do?"))
+    print('')
+    print(f'You scored {count}!')
+    if count <= len(movies)/2:
+        print('Thats such a Z-Lister score!')
+        print(f'Better luck next time {user_name}')
+    else:
+        print(f'Congratulations, your an A-Lister, Great Score {user_name}!')
+
+    username = user_name
+    data = []
+    data.append(username)
+    data.append(count)
+    walk_of_fame.append_row(data)
+    data_list = walk_of_fame.get_all_values()
+    sorted_list = sorted(data_list, key=lambda x: int(x[1]), reverse=True)
+    walk_of_fame.update(sorted_list, "A:B")
+
+    if count > int(sorted_list[9][1]):
+        print(f"{user_name}, you have a top score!")
+        print("Get ready to see your star on the walk of fame...")
+        print()
+        leaderboard()
+    else:
+        leaderboard()
+
+    exit()
+
+
 def validate_selected_option(option):
     """
     Validate that a valid option has been selected
