@@ -8,11 +8,11 @@ import requests
 from google.oauth2.service_account import Credentials
 from pyfiglet import Figlet
 
+import warnings
+
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
-
-import warnings
 
 logger = logging.getLogger(__name__)
 
@@ -149,14 +149,14 @@ def how_to_play():
 
 
 def validate_user_input(user_input):
-   """
-   Validate that user has entered m
-   Raise ValueError if any other character used
-   """
-   if not user_input.lower():
+    """
+    Validate that user has entered m
+    Raise ValueError if any other character used
+    """
+    if not user_input.lower():
       raise ValueError("Please only use lowercase")
 
-   return True
+    return True
 
 
 def begin_game_play():
@@ -191,7 +191,7 @@ def begin_game_play():
         else:
             print(f'{Fore.RED}Sorry but thats incorrect!')
             print('')
-     
+    
     os.system('clear')
     print(f.renderText("How did you do?"))
     print('')
