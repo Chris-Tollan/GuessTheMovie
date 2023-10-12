@@ -59,7 +59,7 @@ def end_game():
     print(f.renderText("Thats a Wrap!"))
     print(f'Thanks for playing {Fore.CYAN}{user_name}')
     print('Goodbye')
-    print()
+    quit()
 
 
 def validate_exit(exit):
