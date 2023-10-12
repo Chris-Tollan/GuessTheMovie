@@ -64,28 +64,28 @@ def end_game():
     quit()
 
 
-def validate_exit(exit):
+def validate_back_to_menu(back_to_menu):
     """
     Validate that user has entered m
     Raise ValueError if any other character used
     """
-    if exit.lower() != "m":
+    if back_to_menu.lower() != "m":
         raise ValueError("Please enter m")
 
     return True
 
 
-def exit():
+def back_to_menu():
     """
-    Provide option to exit current screen
+    Provide option to exit current screen and
     Return to menu
     """
 
     while True:
         try:
-            exit = input("Type m to display main menu \n")
+            back_to_menu = input("Type m to display main menu \n")
 
-            if exit.lower() == "m":
+            if back_to_menu.lower() == "m":
                 os.system("clear")
                 menu()
                 break
@@ -111,7 +111,7 @@ def leaderboard():
         print(f"{Fore.YELLOW}Rank {rank}: {username} - {count}")
 
     print()
-    exit()
+    back_to_menu()
 
 
 def how_to_play():
@@ -139,7 +139,7 @@ def how_to_play():
     print(f.renderText("How To Play"))
     print(f'{Fore.CYAN}{user_name},')
     print(instructions)
-    exit()
+    back_to_menu()
 
 
 #def validate_user_input(user_input):
@@ -214,7 +214,7 @@ def begin_game_play():
     else:
         leaderboard()
 
-    exit()
+    back_to_menu()
 
 
 def validate_selected_option(option):
