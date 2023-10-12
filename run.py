@@ -129,6 +129,17 @@ def how_to_play():
     exit()
 
 
+#def validate_user_input(user_input):
+ #   """
+  #  Validate that user has entered m
+   # Raise ValueError if any other character used
+    #"""
+    #if not user_input.lower():
+     #   raise ValueError("Please only use lowercase")
+
+    #return True
+
+
 def begin_game_play():
     """
     Get movie name from list
