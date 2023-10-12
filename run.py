@@ -327,7 +327,7 @@ def load_game():
             user_name = input("Enter your username here: \n")
             if validate_user_name(user_name):
                 print()
-                print(f"Hello {Fore.CYAN}{user_name} {Fore.WHITE}welcome to Guess the Movie! \n")
+                print(f"Hello {Fore.CYAN}{user_name} {Fore.WHITE}welcome to Guess the Movie!")
                 os.system("clear")
                 menu()
                 break
