@@ -12,6 +12,8 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
+import warnings
+
 logger = logging.getLogger(__name__)
 
 SCOPE = [
@@ -199,6 +201,7 @@ def begin_game_play():
     walk_of_fame.append_row(data)
     data_list = walk_of_fame.get_all_values()
     sorted_list = sorted(data_list, key=lambda x: int(x[1]), reverse=True)
+    warnings.filterwarnings('ignore')
     walk_of_fame.update(sorted_list, "A:B")
 
     if count > int(sorted_list[9][1]):
