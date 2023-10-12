@@ -16,6 +16,11 @@ import warnings
 
 logger = logging.getLogger(__name__)
 
+"""
+Idea to use google sheet for leaderboard
+taken from Code Institutes Love Sandwiches
+Walkthrough project
+"""
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -28,7 +33,6 @@ if Path("creds.json").exists():
     GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
     SHEET = GSPREAD_CLIENT.open("guess_the_movie_leaderboard")
 else:
-    # load all variable from environment
     logger.warning("Loading Google Import from environment")
 
 f = Figlet(font="slant")
@@ -58,6 +62,9 @@ walk_of_fame = SHEET.worksheet("walk_of_fame")
 
 
 def end_game():
+    """
+    function to end the game and quit session
+    """
     print(f.renderText("Thats a Wrap!"))
     print(f'Thanks for playing {Fore.CYAN}{user_name}')
     print('Goodbye')
@@ -80,7 +87,6 @@ def back_to_menu():
     Provide option to exit current screen and
     Return to menu
     """
-
     while True:
         try:
             back_to_menu = input("Type m to display main menu \n")
@@ -142,15 +148,15 @@ def how_to_play():
     back_to_menu()
 
 
-#def validate_user_input(user_input):
- #   """
-  #  Validate that user has entered m
-   # Raise ValueError if any other character used
-    #"""
-    #if not user_input.lower():
-     #   raise ValueError("Please only use lowercase")
+def validate_user_input(user_input):
+   """
+   Validate that user has entered m
+   Raise ValueError if any other character used
+   """
+   if not user_input.lower():
+      raise ValueError("Please only use lowercase")
 
-    #return True
+   return True
 
 
 def begin_game_play():
@@ -161,6 +167,8 @@ def begin_game_play():
     Check answer
     Calculate score
     update leaderboard
+    Code to loop through movie list taken and amended from
+    Pythonology tutorial on youtube as referenced in readme
     """
 
     os.system('clear')
@@ -174,7 +182,7 @@ def begin_game_play():
 
         print(f'Unscramble this Movie: {scrambled} ')
         user_input = input('Enter the Movie here: \n')
-        #validate_user_input(user_input)
+        validate_user_input(user_input)
 
         if user_input == movies[movie]:
             print(f'{Fore.GREEN}That is correct, Well Done!')
@@ -188,11 +196,21 @@ def begin_game_play():
     print(f.renderText("How did you do?"))
     print('')
     print(f'You scored {count}!')
+    print('')
     if count <= len(movies)/2:
         print('Thats such a Z-Lister score!')
+        print('')
         print(f'Better luck next time {Fore.CYAN}{user_name}')
+        print('')
     else:
         print(f'Congratulations, your an A-Lister, Great Score {Fore.CYAN}{user_name}!')
+        print('')
+
+    """
+    This section of code has been taken and amended
+    from fellow Code Institutes project as referenced
+    in the credits section of readme
+    """
 
     username = user_name
     data = []
@@ -205,13 +223,15 @@ def begin_game_play():
     walk_of_fame.update(sorted_list, "A:B")
 
     if count > int(sorted_list[9][1]):
-        input('Press any key to continue: \n')
+        input(f'Press enter to continue: \n')
         os.system('clear')
         print(f"{Fore.CYAN}{user_name}, you have a top score!")
         print("Get ready to see your star on the walk of fame...")
         print()
         leaderboard()
     else:
+        input(f'Press enter to continue: \n')
+        os.system('clear')
         leaderboard()
 
     back_to_menu()
@@ -236,7 +256,6 @@ def menu():
     -	Start game
     -   Quit game
     """
-
     while True:
         try:
             print(f.renderText("Menu"))
@@ -278,10 +297,10 @@ def validate_user_name(user_name):
     Check username entry for special characters
     Raise ValueError if special  characters are used
     """
-    invalid_chars = ["/", "(", ")", "{", "}", "[", "]", "<", ">"]
+    invalid_chars = ["/", "(", ")", "{", "}", "[", "]", "<", ">", "!", "#"]
 
     if any(char in user_name for char in invalid_chars):
-        raise ValueError("Username can't contain /(){}[]<>\n")
+        raise ValueError("Username can't contain /(){}[]<>!# \n")
 
     return True
 
