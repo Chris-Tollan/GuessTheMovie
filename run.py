@@ -154,7 +154,7 @@ def validate_user_input(user_input):
     Raise ValueError if any other character used
     """
     if not user_input.lower():
-      raise ValueError("Please only use lowercase")
+        raise ValueError("Please only use lowercase")
 
     return True
 
@@ -203,7 +203,8 @@ def begin_game_play():
         print(f'Better luck next time {Fore.CYAN}{user_name}')
         print('')
     else:
-        print(f'Congratulations, your an A-Lister, Great Score {Fore.CYAN}{user_name}!')
+        print(f'Congratulations, your an A-Lister,')
+        print(f'Great Score {Fore.CYAN}{user_name}!')
         print('')
 
     """
@@ -264,14 +265,15 @@ def menu():
             print("Camera...")
             print(f"{Fore.GREEN}Action!")
             print("")
-            print(f'Hey {Fore.CYAN}{user_name}, {Fore.WHITE}choose an option from the following')
+            print(f'Hey {Fore.CYAN}{user_name},')
+            print('Choose an option from the following')
             print('')
             print(f"{Fore.MAGENTA}[1] How to Play")
             print(f"{Fore.BLUE}[2] Leaderboard")
             print(f"{Fore.GREEN}[3] Start Game")
             print(f'{Fore.RED}[x] Quit')
             print("")
-            option = input(f"Enter {Fore.MAGENTA}1, {Fore.BLUE}2, {Fore.GREEN}3 or {Fore.RED}x {Fore.WHITE} \n")
+            option = input(f"Enter 1, 2, 3 or x \n")
             validate_selected_option(option)
 
             if option == "1":
@@ -318,7 +320,8 @@ def load_game():
     print('')
     print(f"{Fore.YELLOW}Welcome to Guess the Movie")
     print('')
-    print(f"{Fore.YELLOW}How well can you recognise these scrambled blockbuster titles?")
+    print(f"{Fore.YELLOW}How well can you recognise these")
+    print(f"{Fore.YELLOW}scrambled blockbuster titles?")
     print(f"{Fore.YELLOW}Lets find out…")
     print('')
 
@@ -327,7 +330,8 @@ def load_game():
             user_name = input("Enter your username here: \n")
             if validate_user_name(user_name):
                 print()
-                print(f"Hello {Fore.CYAN}{user_name} {Fore.WHITE}welcome to Guess the Movie!")
+                print(f"Hello {Fore.CYAN}{user_name}...")
+                print("Welcome to Guess the Movie!")
                 os.system("clear")
                 menu()
                 break
