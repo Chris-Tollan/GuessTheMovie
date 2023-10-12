@@ -51,6 +51,12 @@ user_name = ''
 walk_of_fame = SHEET.worksheet("walk_of_fame")
 
 
+def end_game():
+    print(f.renderText("Thats a Wrap!"))
+    print(f'Thanks for playing {user_name}')
+    print('Goodbye')
+
+
 def validate_exit(exit):
     """
     Validate that user has entered m
@@ -150,6 +156,8 @@ def begin_game_play():
     update leaderboard
     """
 
+    os.system('clear')
+
     global count
 
     print(f.renderText("Guess the Movie"))
@@ -216,6 +224,7 @@ def menu():
     -	Explain how to play
     -	Access leaderboard
     -	Start game
+    -   Quit game
     """
 
     while True:
@@ -231,8 +240,9 @@ def menu():
             print("[1] How to Play")
             print("[2] Leaderboard")
             print("[3] Start Game")
+            print('[x] Quit')
             print("")
-            option = input("Enter 1, 2 or 3 \n")
+            option = input("Enter 1, 2, 3 or x \n")
             validate_selected_option(option)
 
             if option == "1":
@@ -241,9 +251,12 @@ def menu():
             elif option == "2":
                 leaderboard()
                 break
+            elif option == "3":
+                begin_game_play()
+                break
             else:
                 os.system("clear")
-                begin_game_play()
+                end_game()
                 break
         except ValueError as e:
             print("Try again:", str(e))
