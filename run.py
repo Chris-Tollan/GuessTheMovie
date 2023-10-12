@@ -8,6 +8,10 @@ import requests
 from google.oauth2.service_account import Credentials
 from pyfiglet import Figlet
 
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 logger = logging.getLogger(__name__)
 
 SCOPE = [
@@ -53,7 +57,7 @@ walk_of_fame = SHEET.worksheet("walk_of_fame")
 
 def end_game():
     print(f.renderText("Thats a Wrap!"))
-    print(f'Thanks for playing {user_name}')
+    print(f'Thanks for playing {Fore.CYAN}{user_name}')
     print('Goodbye')
     print()
 
@@ -102,7 +106,7 @@ def leaderboard():
 
     for rank, item in enumerate(leaderboard[:10], start=1):
         username, count = item
-        print(f"Rank {rank}: {username} - {count}")
+        print(f"{Fore.YELLOW}Rank {rank}: {username} - {count}")
 
     print()
     exit()
@@ -131,7 +135,7 @@ def how_to_play():
     To begin, select the Start Game option from the menu. 
     """
     print(f.renderText("How To Play"))
-    print(f'{user_name},')
+    print(f'{Fore.CYAN}{user_name},')
     print(instructions)
     exit()
 
@@ -171,11 +175,11 @@ def begin_game_play():
         #validate_user_input(user_input)
 
         if user_input == movies[movie]:
-            print('That is correct, Well Done!')
+            print(f'{Fore.GREEN}That is correct, Well Done!')
             print('')
             count += 1
         else:
-            print('Sorry but thats incorrect!')
+            print(f'{Fore.RED}Sorry but thats incorrect!')
             print('')
      
     os.system('clear')
@@ -184,9 +188,9 @@ def begin_game_play():
     print(f'You scored {count}!')
     if count <= len(movies)/2:
         print('Thats such a Z-Lister score!')
-        print(f'Better luck next time {user_name}')
+        print(f'Better luck next time {Fore.CYAN}{user_name}')
     else:
-        print(f'Congratulations, your an A-Lister, Great Score {user_name}!')
+        print(f'Congratulations, your an A-Lister, Great Score {Fore.CYAN}{user_name}!')
 
     username = user_name
     data = []
@@ -198,7 +202,9 @@ def begin_game_play():
     walk_of_fame.update(sorted_list, "A:B")
 
     if count > int(sorted_list[9][1]):
-        print(f"{user_name}, you have a top score!")
+        input('Press any key to continue: \n')
+        os.system('clear')
+        print(f"{Fore.CYAN}{user_name}, you have a top score!")
         print("Get ready to see your star on the walk of fame...")
         print()
         leaderboard()
@@ -232,18 +238,18 @@ def menu():
         try:
             print(f.renderText("Menu"))
             print('')
-            print("Lights...")
+            print(f"{Fore.YELLOW}Lights...")
             print("Camera...")
-            print("Action!")
+            print(f"{Fore.GREEN}Action!")
             print("")
-            print(f'Hey {user_name}, choose an option from the following')
+            print(f'Hey {Fore.CYAN}{user_name}, {Fore.WHITE}choose an option from the following')
             print('')
-            print("[1] How to Play")
-            print("[2] Leaderboard")
-            print("[3] Start Game")
-            print('[x] Quit')
+            print(f"{Fore.MAGENTA}[1] How to Play")
+            print(f"{Fore.BLUE}[2] Leaderboard")
+            print(f"{Fore.GREEN}[3] Start Game")
+            print(f'{Fore.RED}[x] Quit')
             print("")
-            option = input("Enter 1, 2, 3 or x \n")
+            option = input(f"Enter {Fore.MAGENTA}1, {Fore.BLUE}2, {Fore.GREEN}3 or {Fore.RED}x {Fore.WHITE} \n")
             validate_selected_option(option)
 
             if option == "1":
@@ -288,10 +294,10 @@ def load_game():
 
     print(f.renderText("Guess the Movie"))
     print('')
-    print("Welcome to Guess the Movie")
+    print(f"{Fore.YELLOW}Welcome to Guess the Movie")
     print('')
-    print("How well can you recognise these scrambled blockbuster titles?")
-    print("Lets find out…")
+    print(f"{Fore.YELLOW}How well can you recognise these scrambled blockbuster titles?")
+    print(f"{Fore.YELLOW}Lets find out…")
     print('')
 
     while True:
@@ -299,12 +305,12 @@ def load_game():
             user_name = input("Enter your username here: \n")
             if validate_user_name(user_name):
                 print()
-                print(f"Hello {user_name} welcome to Guess the Movie! \n")
+                print(f"Hello {Fore.CYAN}{user_name} {Fore.WHITE}welcome to Guess the Movie! \n")
                 os.system("clear")
                 menu()
                 break
         except ValueError as e:
-            print("Username is invalid:", str(e))
+            print(f"{Fore.RED}Username is invalid:", str(e))
 
     return user_name
 
