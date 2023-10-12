@@ -55,6 +55,7 @@ def end_game():
     print(f.renderText("Thats a Wrap!"))
     print(f'Thanks for playing {user_name}')
     print('Goodbye')
+    print()
 
 
 def validate_exit(exit):
@@ -212,8 +213,8 @@ def validate_selected_option(option):
     Validate that a valid option has been selected
     Raise ValueError if invalid option selected
     """
-    if option != "1" and option != "2" and option != "3":
-        raise ValueError("Sorry not an option, please enter 1, 2 or 3")
+    if option != "1" and option != "2" and option != "3" and option != "x":
+        raise ValueError("Sorry not an option, please enter 1, 2, 3 or x")
 
     return True
 
