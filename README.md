@@ -2,7 +2,7 @@
 
 ![image](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/88f36c5f-18b7-413c-905f-afeff1460fff)
 
-Link to Deployed Site - (https://guess-the-movie-5e4107e9e431.herokuapp.com/)
+Link to Deployed Site - https://guess-the-movie-5e4107e9e431.herokuapp.com/
 
 ## Aim
 
@@ -45,7 +45,7 @@ When first run, the user will enter a username...points are gained for correct a
     - The navigation around the application and how it will allow for a user friendly and easy to navigate game for the user.
     - Anything input by the user must pass validation before the game can progress.
 
-[Flowcharts.pdf](https://github.com/Chris-Tollan/GuessTheMovie/files/12897633/Flowcharts.pdf)
+![Flowcharts](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/6350d7c9-3503-4ba0-b7ba-1a5848004f5b)
             
 ## Features
 
