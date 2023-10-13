@@ -2,6 +2,8 @@
 
 ![image](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/88f36c5f-18b7-413c-905f-afeff1460fff)
 
+Link to Deployed Site - (https://guess-the-movie-5e4107e9e431.herokuapp.com/)
+
 ## Aim
 
 Guess The Movie is a word unscrambler game. In this command line application, the user will be presented with a Movie title which has been scrambled to make it unreadable, to progress through the game the user must correctly unscramble the Movie title.
@@ -43,7 +45,7 @@ When first run, the user will enter a username...points are gained for correct a
     - The navigation around the application and how it will allow for a user friendly and easy to navigate game for the user.
     - Anything input by the user must pass validation before the game can progress.
 
-![Flowchart](https://github.com/Chris-Tollan/guess-the-movie/assets/134441833/9d7ce1ba-8e74-43a1-8457-b8c100ac9942)
+[Flowcharts.pdf](https://github.com/Chris-Tollan/GuessTheMovie/files/12897633/Flowcharts.pdf)
             
 ## Features
 
