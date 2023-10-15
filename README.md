@@ -46,6 +46,34 @@ When first run, the user will enter a username...points are gained for correct a
     - Anything input by the user must pass validation before the game can progress.
 
 ![Flowcharts](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/6350d7c9-3503-4ba0-b7ba-1a5848004f5b)
+
+### Wireframes
+
+- I used Balsamiq to design how I intended this project to look to the user.
+
+Welcome Screen
+
+![Welcome Screen](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/2de4cfda-0a97-449d-8a85-245576eb1957)
+
+Menu Screen
+
+![Menu Screen](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/8d0e9b00-7cb9-4d06-8b5b-8081f48c4fb9)
+
+Instructions Screen
+
+![How to play](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/36e863f8-ee57-4e32-9e1e-de05b9042b74)
+
+Leaderboard
+
+![Walk of Fame](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/ab6fcfcc-6b65-4a7a-b6b6-35ce8525cc09)
+
+Game
+
+![game screen](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/ddc73cd4-5ba0-4240-9db3-9422a1749f07)
+
+End Game
+
+![End game](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/0f0cddde-95a7-433e-bcd7-ab447d114515)
             
 ## Features
 
@@ -54,6 +82,13 @@ When first run, the user will enter a username...points are gained for correct a
 - When the application is run a Welcome Screen will be displayed which will display a greetings message and present the user with the option to enter their name.
 
 ![image](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/54d88cda-12bc-4ac3-b4f1-fbbab36b0bc7)
+
+### Menu Screen
+
+- the user will be presented with at menu with options to learn How to Play, View the Leaderboard, Start the Game or quit.
+
+  ![image](https://github.com/Chris-Tollan/GuessTheMovie/assets/134441833/9cc5984c-367f-4db6-913c-85a11f295129)
+
 
 ### Instructions
 
@@ -107,6 +142,7 @@ When first run, the user will enter a username...points are gained for correct a
 
 ### Tools and Technologies
 
+- Balsamiq
 - Lucid Charts - Used to develop a flow chart for the logic flow for this project
 - Github - Used to story the reposiitory for this project
 - Codeanywhere - Used to write, develop, preview the code and also to push it to GitHub
