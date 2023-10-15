@@ -228,10 +228,10 @@ In order to protect the main branch while you work on something new, essential w
 ### Code
 
 - Throughout this project I have researched a number of tutorials and viewed project of a similar nature. From doing this I found the following of partiicular help:
-    - Make a word unscrambler/spelling game in Python, YouTube Tutorial by Pythonology - (https://www.youtube.com/watch?v=-Rz4fM-J0CY)
+    - Make a word unscrambler/spelling game in Python, YouTube Tutorial by Pythonology - https://www.youtube.com/watch?v=-Rz4fM-J0CY
         - I used the code from this tutorial and edited it where neccesary to create the the begin_game_play function for my project.
      
-    - My fellow Code Institute student Helen Murugan created a word scrambler game which can be accessed via this link (https://github.com/helenmurugan/scrambled-tech/tree/main)
+    - My fellow Code Institute student Helen Murugan created a word scrambler game which can be accessed via this link - https://github.com/helenmurugan/scrambled-tech/tree/main
         - I used the code from Helens project to assist me with creating my leaderboard function and in particular uploading the current users score to the leaderboard. 
 
 ### Content
@@ -245,4 +245,4 @@ In order to protect the main branch while you work on something new, essential w
 
 -   Fellow members of the Slack community for their continuous help, feedback and guidance.
 
--   Helen Murugan for granting me permission to view her leaderboard code in order to create mine for this project.
+-   My fellow Code Institute Student Helen Murugan for granting me permission to view her Scrambled Tech code which provided inspiration for parts of for this project.
